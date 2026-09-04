@@ -29,5 +29,5 @@ createServer((request, response) => {
   });
   createReadStream(filePath).pipe(response);
 }).listen(port, "127.0.0.1", () => {
-  console.log(`Agent Quota Manager landing page: http://127.0.0.1:${port}`);
+  console.log(`Quotafence homepage: http://127.0.0.1:${port}`);
 });

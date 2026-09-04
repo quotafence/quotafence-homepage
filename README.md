@@ -1,6 +1,6 @@
-# Agent Quota Manager landing page
+# Quotafence homepage
 
-Marketing site for [Agent Quota Manager](https://github.com/buisonanh/agent-quota-manager), a local-first budget guard and routing layer for AI coding agents.
+Marketing site for [Quotafence](https://github.com/quotafence/quotafence), a local-first quota allocation and enforcement layer for coding-agent subscriptions.
 
 ## Development
 

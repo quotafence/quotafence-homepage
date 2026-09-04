@@ -11,7 +11,7 @@ for (const token of ["./src/styles.css", "./src/main.js", "./favicon.svg"]) {
   if (!html.includes(token)) throw new Error(`Missing HTML reference: ${token}`);
 }
 
-for (const token of ["Agent Quota Manager", "aqm run codex", "data-menu-button"]) {
+for (const token of ["quotafence", "qf run codex", "data-menu-button"]) {
   if (!js.includes(token)) throw new Error(`Missing landing-page content: ${token}`);
 }
 
