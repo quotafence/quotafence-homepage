@@ -31,27 +31,37 @@ app.innerHTML = `
         <div class="status-row"><span><i class="status-dot"></i> Local-first</span><span>Policy-driven</span><span>Apache 2.0</span></div>
       </div>
 
-      <div class="product-window reveal" aria-label="Quotafence dashboard preview">
-        <div class="window-bar"><div class="window-dots"><span></span><span></span><span></span></div><span class="window-title">quotafence</span><span class="window-state"><i></i> Guard active</span></div>
-        <div class="window-body">
-          <aside class="mock-sidebar">
-            <div class="mini-brand"><span class="brand-mark small"><span></span><span></span><span></span></span><strong>QF</strong></div>
-            <div class="mock-nav active"><i></i>Overview</div><div class="mock-nav"><i></i>Workspaces</div><div class="mock-nav"><i></i>Sessions</div><div class="mock-nav"><i></i>Settings</div>
-            <div class="mock-profile"><span>SA</span><div><strong>Local profile</strong><small>On this device</small></div></div>
+      <div class="product-window real-ui reveal" aria-label="Quotafence application interface">
+        <div class="window-bar"><div class="window-dots"><span></span><span></span><span></span></div><span class="window-title">QuotaFence</span><span></span></div>
+        <div class="real-app-layout">
+          <aside class="real-sidebar">
+            <div class="real-brand"><span class="gauge-mark"><i></i></span><div><strong>Agent Quota</strong><small>Manager</small></div></div>
+            <nav class="real-nav"><a class="active"><span class="gauge-icon"><i></i></span>Overview</a><a><span class="settings-icon">⌾</span>Settings</a></nav>
+            <div class="source-label"><span>Quota sources</span><b>＋</b></div>
+            <div class="source-card active"><img src="./assets/codex-dark.png" alt="" /><div><strong>Codex</strong><small>5-hour + Weekly</small></div><i></i></div>
+            <div class="source-card"><span class="claude-mark">AI</span><div><strong>Claude Code</strong><small>5-hour + Weekly</small></div><i></i></div>
           </aside>
-          <div class="mock-content">
-            <div class="mock-heading"><div><small>OVERVIEW</small><h3>Good morning, Bùi.</h3></div><button>•••</button></div>
-            <div class="quota-grid">
-              <div class="quota-card main-quota"><div class="quota-ring"><div><strong>82%</strong><span>available</span></div></div><div class="quota-copy"><small>5-HOUR LIMIT</small><strong>Priority work protected</strong><p>Resets in 2h 18m</p></div></div>
-              <div class="quota-card metric"><small>MANAGED BURN</small><strong>3.8%</strong><span>per day</span><div class="sparkline"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
-              <div class="quota-card metric"><small>ATTRIBUTION</small><strong>92%</strong><span>trusted coverage</span><div class="progress"><i></i></div></div>
+          <div class="real-main">
+            <header class="real-topbar"><div><h3>Codex</h3><p>5-hour + Weekly allowances</p></div><button><span>↻</span> Sync</button></header>
+            <div class="real-grid">
+              <article class="allowance-card real-panel">
+                <div class="card-kicker"><span class="gauge-mini">◔</span><i></i>2 allowance windows <small>Synced just now</small></div>
+                <div class="allowance-row"><div><strong>5-hour</strong><span>Resets Sep 4</span></div><b>82% left</b><div class="allowance-track"><i style="width:82%"></i></div></div>
+                <div class="allowance-row"><div><strong>Weekly</strong><span>Resets Sep 8</span></div><b>64% left</b><div class="allowance-track"><i style="width:64%"></i></div></div>
+                <div class="heatmap-title"><span>⌁ Daily usage</span><small>Last 6 months · 34 active days</small></div>
+                <div class="heatmap"><span class="days">Sun<br>Mon<br>Tue<br>Wed<br>Thu<br>Fri<br>Sat</span><div class="heatmap-cells">${Array.from({ length: 84 }, (_, index) => `<i class="level-${[0,0,1,0,2,0,0,1,0,0,3,0,0,1,0,2,0,0,0,4,0][index % 21]}"></i>`).join("")}</div></div>
+              </article>
+              <article class="summary-card real-panel">
+                <div class="reset-row"><span>▣ Resets</span><strong>4 days</strong><small>Sep 8</small></div>
+                <div class="real-donut"><span><strong>64%</strong><small>left</small></span></div>
+                <dl><div><dt><i class="used"></i>Used</dt><dd>36%</dd></div><div><dt><i class="funded"></i>Protected</dt><dd>44%</dd></div><div><dt><i class="free"></i>Unassigned</dt><dd>20%</dd></div></dl>
+              </article>
             </div>
-            <div class="allocation-card">
-              <div class="allocation-head"><div><small>PRIORITY PLAN</small><strong>Workspace allocations</strong></div><span>32% assigned</span></div>
-              <div class="allocation-row"><div class="priority">1</div><div class="project"><strong>quotafence</strong><span>~/Code/quotafence</span></div><div class="bar"><i style="width:78%"></i></div><strong>30%</strong></div>
-              <div class="allocation-row"><div class="priority">2</div><div class="project"><strong>Client dashboard</strong><span>~/Code/client-dashboard</span></div><div class="bar"><i style="width:47%"></i></div><strong>12%</strong></div>
-              <div class="allocation-row muted"><div class="priority">—</div><div class="project"><strong>Unassigned capacity</strong><span>Available to any work</span></div><div class="bar"><i style="width:100%"></i></div><strong>68%</strong></div>
-            </div>
+            <article class="workspace-card real-panel">
+              <header><div><h3>▱ Weekly workspace allocations</h3><p>Drag to set priority. Higher allocations are protected first.</p></div><button>＋ Add allocation</button></header>
+              <div class="workspace-row"><span class="rank">1</span><div class="workspace-name"><b>quotafence</b><small>~/Code/quotafence</small></div><div class="workspace-quota"><span><b>12% used</b><small>18% available</small></span><div><i style="width:40%"></i><b style="width:35%"></b></div></div><strong class="limit">30%<small>limit</small></strong><span class="grip">⠿</span></div>
+              <div class="workspace-row"><span class="rank">2</span><div class="workspace-name"><b>client-platform</b><small>~/Code/client-platform</small></div><div class="workspace-quota"><span><b>6% used</b><small>12% available</small></span><div><i style="width:32%"></i><b style="width:30%"></b></div></div><strong class="limit">18%<small>limit</small></strong><span class="grip">⠿</span></div>
+            </article>
           </div>
         </div>
       </div>
