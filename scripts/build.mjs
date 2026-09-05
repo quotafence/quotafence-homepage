@@ -8,6 +8,7 @@ await Promise.all([
   cp("src/main.js", "dist/src/main.js"),
   cp("src/styles.css", "dist/src/styles.css"),
   cp("assets/codex-dark.png", "dist/assets/codex-dark.png"),
+  cp("assets/claude.svg", "dist/assets/claude.svg"),
   cp("assets/brand", "dist/assets/brand", { recursive: true }),
 ]);
 
