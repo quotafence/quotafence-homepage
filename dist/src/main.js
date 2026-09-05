@@ -16,7 +16,7 @@ const workflow = [
 const app = document.querySelector("#app");
 app.innerHTML = `
   <header class="site-header" data-header>
-    <a class="brand" href="#top" aria-label="Quotafence home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>quotafence</span></a>
+    <a class="brand" href="#top" aria-label="QuotaFence home"><img class="brand-lockup" src="./assets/brand/quotafence-white-text.png" alt="QuotaFence" /></a>
     <button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false" data-menu-button><span></span><span></span></button>
     <nav class="nav" data-nav><a href="#product">Product</a><a href="#workflow">Workflow</a><a href="#principles">Principles</a><a class="nav-cta" href="${repoUrl}" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a></nav>
   </header>
@@ -35,7 +35,7 @@ app.innerHTML = `
         <div class="window-bar"><div class="window-dots"><span></span><span></span><span></span></div><span class="window-title">QuotaFence</span><span></span></div>
         <div class="real-app-layout">
           <aside class="real-sidebar">
-            <div class="real-brand"><span class="gauge-mark"><i></i></span><div><strong>Agent Quota</strong><small>Manager</small></div></div>
+            <div class="real-brand"><img class="real-brand-lockup" src="./assets/brand/quotafence-white-text.png" alt="QuotaFence" /></div>
             <nav class="real-nav"><a class="active"><span class="gauge-icon"><i></i></span>Overview</a><a><span class="settings-icon">⌾</span>Settings</a></nav>
             <div class="source-label"><span>Quota sources</span><b>＋</b></div>
             <div class="source-card active"><img src="./assets/codex-dark.png" alt="" /><div><strong>Codex</strong><small>5-hour + Weekly</small></div><i></i></div>
@@ -84,7 +84,7 @@ app.innerHTML = `
     <section class="cta-section section-shell reveal"><div><p class="section-label">Open source · Early stage</p><h2>Put a fence around<br>your best work.</h2></div><div><p>Quotafence is a Codex-first project. Explore the architecture, follow development, or help shape a calmer way to manage agent capacity.</p><a class="button button-primary light" href="${repoUrl}" target="_blank" rel="noreferrer">Explore the project <span>↗</span></a></div></section>
   </main>
 
-  <footer class="site-footer section-shell"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>quotafence</span></a><p>Local-first quota control for coding agents.</p><a href="${repoUrl}" target="_blank" rel="noreferrer">GitHub ↗</a></footer>
+  <footer class="site-footer section-shell"><a class="brand" href="#top" aria-label="QuotaFence home"><img class="brand-lockup" src="./assets/brand/quotafence-white-text.png" alt="QuotaFence" /></a><p>Local-first quota control for coding agents.</p><a href="${repoUrl}" target="_blank" rel="noreferrer">GitHub ↗</a></footer>
 `;
 
 const menuButton = document.querySelector("[data-menu-button]");

@@ -5,10 +5,10 @@ await mkdir("dist/src", { recursive: true });
 await mkdir("dist/assets", { recursive: true });
 await Promise.all([
   cp("index.html", "dist/index.html"),
-  cp("favicon.svg", "dist/favicon.svg"),
   cp("src/main.js", "dist/src/main.js"),
   cp("src/styles.css", "dist/src/styles.css"),
   cp("assets/codex-dark.png", "dist/assets/codex-dark.png"),
+  cp("assets/brand", "dist/assets/brand", { recursive: true }),
 ]);
 
 console.log("Quotafence static site built in dist/.");

@@ -1,13 +1,13 @@
 import { readFile } from "node:fs/promises";
 
-for (const file of ["index.html", "src/main.js", "src/styles.css", "favicon.svg", "assets/codex-dark.png"]) {
+for (const file of ["index.html", "src/main.js", "src/styles.css", "assets/codex-dark.png", "assets/brand/quotafence-white-text.png", "assets/brand/quotafence-black.png"]) {
   await readFile(file);
 }
 
 const html = await readFile("index.html", "utf8");
 const js = await readFile("src/main.js", "utf8");
 
-for (const token of ["./src/styles.css", "./src/main.js", "./favicon.svg"]) {
+for (const token of ["./src/styles.css", "./src/main.js", "./assets/brand/quotafence-black.png", "./assets/brand/quotafence-white.png"]) {
   if (!html.includes(token)) throw new Error(`Missing HTML reference: ${token}`);
 }
 
