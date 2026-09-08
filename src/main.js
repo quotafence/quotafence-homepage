@@ -83,21 +83,33 @@ app.innerHTML = `
         </div>
         <div class="terminal cli-terminal">
           <div class="terminal-bar"><span></span><span></span><span></span><small>~/Code/quotafence</small></div>
-          <div class="cli-panel active" role="tabpanel" data-cli-panel="top"><code><span>❯</span> qfence top --once</code><pre><b> QUOTAFENCE TOP </b>  live local control plane
+          <div class="cli-panel active" role="tabpanel" data-cli-panel="top"><code><span>❯</span> qfence top --once</code><pre><b> QUOTAFENCE TOP </b>  live local control plane  interactive mode: qfence top
 
-╭─────────────┬──────────┬──────────┬──────────╮
-│ PROVIDER    │ 5-HOUR   │ WEEKLY   │ SYNCED   │
-├─────────────┼──────────┼──────────┼──────────┤
-│ Claude Code │ 70% left │ 90% left │ ● 55s ago│
-│ Codex       │ 93% left │ 85% left │ ● 7s ago │
-╰─────────────┴──────────┴──────────┴──────────╯
+╭─────────────┬──────────────────────────────┬──────────────────────────────┬──────────────╮
+│ PROVIDER    │ 5-HOUR                       │ WEEKLY                       │ SYNCED       │
+├─────────────┼──────────────────────────────┼──────────────────────────────┼──────────────┤
+│ Claude Code │ ━━━━━━──  70% ↻ today 12:00  │ ━━━━━━━━  90% ↻ tomorrow     │ ● 55s ago    │
+│ Codex       │ ━━━━━━━━  93% ↻ today 16:22  │ ━━━━━━━─  85% ↻ Sep 15 04:21 │ ● 7s ago     │
+╰─────────────┴──────────────────────────────┴──────────────────────────────┴──────────────╯
 
 <strong>  PROJECT ALLOCATIONS</strong>
-  1  Codex  quotafence       50%  ● allow
-  2  Codex  client-platform  30%  ● allow
+╭─────┬─────────────┬─────────────────────┬──────────┬──────────┬──────────┬──────────────╮
+│ #   │ PROVIDER    │ PROJECT             │ WEEKLY   │ USED     │ LEFT     │ STATUS       │
+├─────┼─────────────┼─────────────────────┼──────────┼──────────┼──────────┼──────────────┤
+│ 1   │ Claude Code │ research            │ 15%      │ 2%       │ 13%      │ ● allow      │
+│ 1   │ Codex       │ quotafence          │ 50%      │ 12%      │ 38%      │ ● allow      │
+│ 2   │ Codex       │ client-platform     │ 30%      │ 6%       │ 24%      │ ● allow      │
+╰─────┴─────────────┴─────────────────────┴──────────┴──────────┴──────────┴──────────────╯
 
-  <i>● Codex · 35% used over 30 days</i>
-  ·▂▂█····▁·▂···▁···▁▁······▂·▁▂</pre></div>
+  <i>●  Claude Code · 20% used over 30 days</i>
+  ··········▂···▄··············█
+  10 Aug                  08 Sep
+
+  <i>●  Codex · 35% used over 30 days</i>
+  ·▂▂█····▁·▂···▁···▁▁······▂·▁▂
+  10 Aug                  08 Sep
+
+  refreshed just now · live interval 30s</pre></div>
           <div class="cli-panel" role="tabpanel" data-cli-panel="allocate"><code><span>❯</span> qfence allocations add --provider codex --percent 20</code><pre><b>PROJECT             WEEKLY   USED   LEFT   STATUS</b>
 quotafence          50%      12%    38%    ● allow
 client-platform     30%       6%    24%    ● allow
