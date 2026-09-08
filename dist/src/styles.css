@@ -29,7 +29,7 @@ h1,h2,h3,p{margin:0}
 .announcement{display:inline-flex;align-items:center;gap:10px;margin-bottom:26px;padding:6px 10px 6px 6px;border:1px solid rgba(255,255,255,.11);border-radius:999px;color:#929ba4;background:rgba(255,255,255,.025);font-size:10px}.announcement b{padding:4px 7px;border-radius:999px;color:#07131a;background:var(--blue);font-size:8px;text-transform:uppercase;letter-spacing:.06em}.announcement i{width:3px;height:3px;border-radius:50%;background:#39434c}.announcement span{color:var(--blue)}
 .eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:24px}
 .eyebrow span{width:7px;height:7px;border-radius:50%;background:var(--blue);box-shadow:0 0 16px rgba(95,215,255,.7)}
-h1{max-width:640px;font-size:clamp(58px,6vw,86px);line-height:.94;letter-spacing:-.065em;font-weight:500}h1 em,.problem-grid h2 em,.section-intro h2 em,.principles-card h2 em{color:var(--blue);font-style:normal}
+h1{max-width:760px;font-size:clamp(58px,6vw,86px);line-height:.96;letter-spacing:-.035em;word-spacing:.075em;font-weight:500}h1>span,h1>em{display:block}h1>span{white-space:nowrap}h1 em,.problem-grid h2 em,.section-intro h2 em,.principles-card h2 em{color:var(--blue);font-style:normal}
 .hero-lead{max-width:580px;margin-top:28px;color:#aaa;font-size:17px;line-height:1.65}
 .hero-actions{display:flex;gap:12px;margin-top:34px}
 .button{min-height:46px;padding:0 18px;display:inline-flex;align-items:center;justify-content:center;gap:18px;border-radius:8px;font-size:13px;font-weight:650;transition:transform .15s}
@@ -108,7 +108,7 @@ h1{max-width:640px;font-size:clamp(58px,6vw,86px);line-height:.94;letter-spacing
 .problem-band{padding:115px 0;background:#eef4f8;color:#10171d}
 .problem-grid{display:grid;grid-template-columns:.55fr 1.3fr 1fr;gap:70px;align-items:start}
 .problem-grid .section-label{color:#70706d}.problem-grid h2 em{color:var(--blue-dark)}
-.problem-grid h2,.section-intro h2,.workflow-copy h2,.principles-card h2,.cta-section h2{font-size:clamp(38px,4.3vw,60px);line-height:1.04;letter-spacing:-.05em;font-weight:600}
+.problem-grid h2,.section-intro h2,.workflow-copy h2,.principles-card h2,.cta-section h2{font-size:clamp(38px,4.3vw,60px);line-height:1.04;letter-spacing:-.035em;font-weight:600}
 .problem-grid>p:last-child{padding-top:7px;color:#62625f;font-size:15px;line-height:1.7}
 .feature-section{padding:140px 0}
 .section-intro{display:grid;grid-template-columns:.7fr 1.3fr .8fr;gap:50px;align-items:end}
@@ -188,7 +188,7 @@ h1{max-width:640px;font-size:clamp(58px,6vw,86px);line-height:.94;letter-spacing
 .site-footer p{grid-column:1/-1;grid-row:2}
 }
 @media(max-width:600px){.section-shell{width:calc(100% - 28px)}
-h1{font-size:50px}
+h1{font-size:clamp(40px,13.5vw,52px)}
 .hero-lead{font-size:15px}
 .hero-actions{flex-direction:column}
 .product-window{margin-left:-7px;margin-right:-7px}

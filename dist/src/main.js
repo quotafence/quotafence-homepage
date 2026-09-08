@@ -26,7 +26,7 @@ app.innerHTML = `
     <section class="hero section-shell">
       <div class="hero-copy reveal">
         <a class="announcement" href="${repoUrl}" target="_blank" rel="noreferrer"><b>Open source</b><i></i> Codex + Claude today · Copilot next <span>↗</span></a>
-        <h1>Your agent quota.<br><em>Protected.</em></h1>
+        <h1><span>Your agent quota.</span><em>Protected.</em></h1>
         <p class="hero-lead">QuotaFence allocates, guards, and explains your coding-agent usage—so low-priority work never drains the capacity your important projects need.</p>
         <div class="hero-actions"><a class="button button-primary" href="${repoUrl}" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a><a class="button button-secondary" href="#workflow">See how it works</a></div>
         <div class="status-row"><span><i class="status-dot"></i> Local-first</span><span>Multi-provider</span><span>Apache 2.0</span></div>
