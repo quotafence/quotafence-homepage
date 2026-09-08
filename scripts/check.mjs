@@ -11,7 +11,7 @@ for (const token of ["./src/styles.css", "./src/main.js", "./assets/brand/quotaf
   if (!html.includes(token)) throw new Error(`Missing HTML reference: ${token}`);
 }
 
-for (const token of ["quotafence", "qf run codex", "Claude Code", "GitHub Copilot", "Coming soon", "data-menu-button", "Weekly workspace allocations", "2 allowance windows"]) {
+for (const token of ["quotafence", "qfence codex", "qfence claude", "Claude Code", "GitHub Copilot", "Coming soon", "Read the docs", "data-menu-button", "Weekly workspace allocations", "2 allowance windows"]) {
   if (!js.includes(token)) throw new Error(`Missing landing-page content: ${token}`);
 }
 
