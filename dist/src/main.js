@@ -1,5 +1,9 @@
 const repoUrl = "https://github.com/quotafence/quotafence";
 const docsUrl = `${repoUrl}/tree/main/docs`;
+const releasesUrl = `${repoUrl}/releases`;
+const releasesApiUrl = "https://api.github.com/repos/quotafence/quotafence/releases?per_page=10";
+const npmPackageUrl = "https://www.npmjs.com/package/@quotafence/cli";
+const npmRegistryUrl = "https://registry.npmjs.org/@quotafence%2Fcli";
 
 const features = [
   { index: "01", title: "See everything live", body: "Open qfence top for a live terminal dashboard of provider allowances, project budgets, sync health, and six months of local usage history." },
@@ -19,7 +23,7 @@ app.innerHTML = `
   <header class="site-header" data-header>
     <a class="brand" href="#top" aria-label="QuotaFence home"><img class="brand-lockup" src="./assets/brand/quotafence-white-text.png" alt="QuotaFence" /></a>
     <button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false" data-menu-button><span></span><span></span></button>
-    <nav class="nav" data-nav><a href="#product">Product</a><a href="#workflow">Workflow</a><a href="#principles">Principles</a><a href="${docsUrl}" target="_blank" rel="noreferrer">Docs</a><a class="nav-cta" href="${repoUrl}" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a></nav>
+    <nav class="nav" data-nav><a href="#product">Product</a><a href="#workflow">Workflow</a><a href="#install">Install</a><a href="#principles">Principles</a><a href="${docsUrl}" target="_blank" rel="noreferrer">Docs</a><a class="nav-cta" href="${repoUrl}" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a></nav>
   </header>
 
   <main id="top">
@@ -28,7 +32,7 @@ app.innerHTML = `
         <a class="announcement" href="${repoUrl}" target="_blank" rel="noreferrer"><b>Open source</b><i></i> Codex + Claude today · Copilot next <span>↗</span></a>
         <h1><span>Your agent quota.</span><em>Protected.</em></h1>
         <p class="hero-lead">QuotaFence allocates, guards, and explains your coding-agent usage—so low-priority work never drains the capacity your important projects need.</p>
-        <div class="hero-actions"><a class="button button-primary" href="${repoUrl}" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a><a class="button button-secondary" href="#workflow">See how it works</a></div>
+        <div class="hero-actions"><a class="button button-primary" href="#install">Install the beta <span>↓</span></a><a class="button button-secondary" href="#workflow">See how it works</a></div>
         <div class="status-row"><span><i class="status-dot"></i> Local-first</span><span>Multi-provider</span><span>Apache 2.0</span></div>
       </div>
 
@@ -130,9 +134,44 @@ new-project         20%       0%    20%    ● allow
       <div class="workflow-steps reveal">${workflow.map(([title, body], index) => `<div class="workflow-step"><span>0${index + 1}</span><div><h3>${title}</h3><p>${body}</p></div></div>`).join("")}</div>
     </div></section>
 
+    <section class="install-section section-shell" id="install">
+      <div class="install-heading reveal">
+        <div><p class="section-label">Install QuotaFence</p><h2>One control plane.<br><em>Your platform.</em></h2></div>
+        <div class="release-summary"><span class="release-indicator" data-release-indicator></span><p data-release-summary>Checking the latest published beta…</p></div>
+      </div>
+      <div class="install-grid">
+        <article class="install-card reveal" data-install-card="npm">
+          <div class="install-card-head"><span class="platform-mark">›_</span><span class="availability" data-npm-status>Checking npm</span></div>
+          <h3>CLI via npm</h3>
+          <p>One command for supported macOS, Windows x64, and GNU/Linux x64 machines.</p>
+          <code>npm install -g @quotafence/cli@beta</code>
+          <a class="install-link" data-npm-link href="${repoUrl}/blob/main/docs/installing.md" target="_blank" rel="noreferrer">Installation guide <span>↗</span></a>
+        </article>
+        <article class="install-card reveal" data-install-card="macos">
+          <div class="install-card-head"><span class="platform-mark">⌘</span><span class="availability" data-platform-status="macos">Release pending</span></div>
+          <h3>macOS</h3>
+          <p>Universal DMG for Apple Silicon and Intel. Early beta signing status is included with the release.</p>
+          <a class="install-link" data-download="macos" href="${releasesUrl}" target="_blank" rel="noreferrer">View releases <span>↗</span></a>
+        </article>
+        <article class="install-card reveal" data-install-card="windows">
+          <div class="install-card-head"><span class="platform-mark">⊞</span><span class="availability" data-platform-status="windows">Release pending</span></div>
+          <h3>Windows</h3>
+          <p>Unsigned x64 installer preview. Verify the published checksum before bypassing SmartScreen.</p>
+          <a class="install-link" data-download="windows" href="${releasesUrl}" target="_blank" rel="noreferrer">View releases <span>↗</span></a>
+        </article>
+        <article class="install-card reveal" data-install-card="linux">
+          <div class="install-card-head"><span class="platform-mark">◆</span><span class="availability" data-platform-status="linux">Release pending</span></div>
+          <h3>Linux</h3>
+          <p>x64 AppImage for portable use, plus a Debian package for compatible distributions.</p>
+          <div class="linux-actions"><a class="install-link" data-download="linux-appimage" href="${releasesUrl}" target="_blank" rel="noreferrer">View releases <span>↗</span></a><a class="install-link secondary-install-link" data-download="linux-deb" href="${releasesUrl}" target="_blank" rel="noreferrer" hidden>Download .deb <span>↓</span></a></div>
+        </article>
+      </div>
+      <p class="install-note reveal">Desktop downloads come from GitHub Releases. Workflow artifacts are temporary tester builds and are not used by these buttons. <a href="${repoUrl}/blob/main/docs/installing.md" target="_blank" rel="noreferrer">Verify checksums before installing ↗</a></p>
+    </section>
+
     <section class="section-shell principles-section" id="principles"><div class="principles-card reveal"><div><p class="section-label">Built on trust</p><h2>Local by default.<br><em>Honest by design.</em></h2></div><div class="principle-list"><div><span>01</span><p><strong>Your policy stays on your device.</strong> Workspace metadata, allocations, and the managed-session ledger use local storage. No hosted account is required.</p></div><div><span>02</span><p><strong>Capability claims match reality.</strong> Quotafence distinguishes process control, trusted prompt admission, and observation-only tracking instead of treating them as equivalent.</p></div><div><span>03</span><p><strong>Uncertainty remains visible.</strong> Concurrent or unmapped activity stays unattributed, and forecasts appear only when evidence is good enough.</p></div></div></div></section>
 
-    <section class="cta-section section-shell reveal"><div><p class="section-label">Open source · Early stage</p><h2>Put a fence around<br>your best work.</h2></div><div><p>QuotaFence supports Codex and Claude today, with GitHub Copilot next on the roadmap. Explore the architecture or help shape a calmer way to manage agent capacity.</p><div class="cta-actions"><a class="button button-primary light" href="${repoUrl}" target="_blank" rel="noreferrer">Explore the project <span>↗</span></a><a class="button docs-button" href="${docsUrl}" target="_blank" rel="noreferrer">Read the docs <span>↗</span></a></div></div></section>
+    <section class="cta-section section-shell reveal"><div><p class="section-label">Open source · Early stage</p><h2>Put a fence around<br>your best work.</h2></div><div><p>QuotaFence supports Codex and Claude today, with GitHub Copilot next on the roadmap. Install the beta or help shape a calmer way to manage agent capacity.</p><div class="cta-actions"><a class="button button-primary light" href="#install">Install the beta <span>↓</span></a><a class="button docs-button" href="${docsUrl}" target="_blank" rel="noreferrer">Read the docs <span>↗</span></a></div></div></section>
   </main>
 
   <footer class="site-footer section-shell"><a class="brand" href="#top" aria-label="QuotaFence home"><img class="brand-lockup" src="./assets/brand/quotafence-white-text.png" alt="QuotaFence" /></a><p>Multi-provider quota control for coding agents.</p><a href="${repoUrl}" target="_blank" rel="noreferrer">GitHub ↗</a></footer>
@@ -153,3 +192,67 @@ cliTabs.forEach((tab) => tab.addEventListener("click", () => {
   cliTabs.forEach((item) => { const active = item === tab; item.classList.toggle("active", active); item.setAttribute("aria-selected", String(active)); });
   cliPanels.forEach((panel) => panel.classList.toggle("active", panel.dataset.cliPanel === selected));
 }));
+
+const assetMatchers = {
+  macos: (name) => name.endsWith(".dmg"),
+  windows: (name) => /setup\.exe$/i.test(name),
+  "linux-appimage": (name) => name.endsWith(".AppImage"),
+  "linux-deb": (name) => name.endsWith(".deb")
+};
+
+function setDownload(download, asset, release) {
+  const link = document.querySelector(`[data-download="${download}"]`);
+  if (!link || !asset) return false;
+  link.href = asset.browser_download_url;
+  link.innerHTML = download === "linux-deb" ? "Download .deb <span>↓</span>" : `Download ${release.tag_name} <span>↓</span>`;
+  link.hidden = false;
+  return true;
+}
+
+async function hydrateReleaseDownloads() {
+  const summary = document.querySelector("[data-release-summary]");
+  const indicator = document.querySelector("[data-release-indicator]");
+  try {
+    const response = await fetch(releasesApiUrl, { headers: { Accept: "application/vnd.github+json" } });
+    if (!response.ok) throw new Error(`GitHub returned ${response.status}`);
+    const releases = await response.json();
+    const release = releases.find((item) => !item.draft);
+    if (!release) throw new Error("No published release");
+    const assets = release.assets || [];
+    const availability = {};
+    Object.entries(assetMatchers).forEach(([platform, matches]) => {
+      availability[platform] = setDownload(platform, assets.find((asset) => matches(asset.name)), release);
+    });
+    ["macos", "windows", "linux"].forEach((platform) => {
+      const status = document.querySelector(`[data-platform-status="${platform}"]`);
+      const ready = platform === "linux" ? availability["linux-appimage"] || availability["linux-deb"] : availability[platform];
+      if (ready) { status.textContent = `${release.tag_name} available`; status.classList.add("available"); }
+    });
+    summary.textContent = `${release.name || release.tag_name} is the latest published build.`;
+    indicator.classList.add("available");
+  } catch {
+    summary.textContent = "No public beta release yet. Downloads will activate automatically after the first release is published.";
+    indicator.classList.add("pending");
+  }
+}
+
+async function hydrateNpmInstall() {
+  const status = document.querySelector("[data-npm-status]");
+  const link = document.querySelector("[data-npm-link]");
+  try {
+    const response = await fetch(npmRegistryUrl);
+    if (!response.ok) throw new Error(`npm returned ${response.status}`);
+    const metadata = await response.json();
+    const version = metadata["dist-tags"]?.beta || metadata["dist-tags"]?.latest;
+    if (!version) throw new Error("No published npm tag");
+    status.textContent = `${version} available`;
+    status.classList.add("available");
+    link.href = npmPackageUrl;
+    link.innerHTML = "View on npm <span>↗</span>";
+  } catch {
+    status.textContent = "npm beta pending";
+  }
+}
+
+hydrateReleaseDownloads();
+hydrateNpmInstall();
