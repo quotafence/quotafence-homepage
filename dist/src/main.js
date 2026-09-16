@@ -42,27 +42,25 @@ app.innerHTML = `
           <aside class="real-sidebar">
             <div class="real-brand"><img class="real-brand-lockup" src="./assets/brand/quotafence-white-text.png" alt="QuotaFence" /></div>
             <nav class="real-nav"><a class="active"><span class="gauge-icon"><i></i></span>Overview</a><a><span class="folder-icon">▰</span>Projects</a><a><span class="settings-icon">⌾</span>Settings</a></nav>
-            <div class="source-label"><span>Quota sources</span><b>＋</b></div>
-            <div class="source-card active"><img src="./assets/codex-dark.png" alt="" /><div><strong>Codex</strong><small>5-hour + Weekly</small></div><i></i></div>
-            <div class="source-card"><img src="./assets/claude.svg" alt="" /><div><strong>Claude Code</strong><small>5-hour + Weekly</small></div><i></i></div>
-            <div class="source-card upcoming"><span class="copilot-mark">GH</span><div><strong>GitHub Copilot</strong><small>Coming soon</small></div><span class="soon-badge">Soon</span></div>
+            <div class="source-label"><span>Sources</span><b>＋</b></div>
+            <div class="source-card active"><img src="./assets/codex-dark.png" alt="" /><div><strong>Codex</strong></div><i></i></div>
+            <div class="source-card"><img src="./assets/claude.svg" alt="" /><div><strong>Claude</strong></div><i></i></div>
+            <div class="source-card upcoming"><span class="copilot-mark">GH</span><div><strong>Copilot</strong></div><span class="soon-badge">Soon</span></div>
           </aside>
           <div class="real-main">
             <header class="real-topbar"><div><h3>Codex</h3></div><button><span>↻</span> Sync</button></header>
             <article class="allowance-card real-panel">
-              <div class="card-kicker"><span class="gauge-mini">◔</span><i></i>Quota windows</div>
-              <div class="allowance-row"><div><strong>5-hour</strong><span>Resets today, 16:22</span></div><b>93% left</b><div class="allowance-track"><i style="width:93%"></i></div></div>
-              <div class="allowance-row"><div><strong>Weekly</strong><span>Resets Sep 15, 04:21</span></div><b>85% left</b><div class="allowance-track"><i style="width:85%"></i></div></div>
+              <div class="card-kicker"><span class="gauge-mini">◔</span><i></i>Quota</div>
+              <div class="allowance-row"><div><strong>5-hour</strong></div><b>93%</b><div class="allowance-track"><i style="width:93%"></i></div></div>
+              <div class="allowance-row"><div><strong>Weekly</strong></div><b>85%</b><div class="allowance-track"><i style="width:85%"></i></div></div>
               <div class="usage-insights">
-                <div><div class="heatmap-title"><span>⌁ Daily usage</span><small>Last 6 months</small></div><div class="heatmap"><div class="heatmap-cells">${Array.from({ length: 182 }, (_, index) => `<i class="level-${[0,0,1,0,2,0,0,1,0,0,3,0,0,1,0,2,0,0,0,4,0,1,0,2,0,0,3,1,0,0,2,0,1,0,0][index % 35]}"></i>`).join("")}</div><div class="heatmap-scale"><span>6 months ago</span><span>Today</span></div></div></div>
-                <div class="model-card"><div><span>✦ Models</span></div><p><b>gpt-5.6-sol</b><span>68%</span></p><i><b style="width:68%"></b></i><p><b>gpt-5.6-terra</b><span>24%</span></p><i><b style="width:24%"></b></i></div>
+                <div><div class="heatmap-title"><span>Daily usage</span></div><div class="heatmap"><div class="heatmap-cells">${Array.from({ length: 182 }, (_, index) => `<i class="level-${[0,0,1,0,2,0,0,1,0,0,3,0,0,1,0,2,0,0,0,4,0,1,0,2,0,0,3,1,0,0,2,0,1,0,0][index % 35]}"></i>`).join("")}</div><div class="heatmap-scale"><span>6 months</span><span>Today</span></div></div></div>
               </div>
             </article>
             <article class="workspace-card real-panel">
               <header><div><h3>▰ Allocations</h3></div><button>＋ Add</button></header>
-              <div class="allocation-head"><span>Project</span><span>Budget</span><span>Left</span><span>Status</span><span></span></div>
-              <div class="workspace-row"><span class="rank">1</span><div class="workspace-name"><b>project-a</b><small>⌄</small></div><strong>30%</strong><span>18%</span><em>● Active</em><span class="grip">⋯</span></div>
-              <div class="workspace-row"><span class="rank">2</span><div class="workspace-name"><b>project-b</b><small>⌄</small></div><strong>18%</strong><span>12%</span><em>● Active</em><span class="grip">⋯</span></div>
+              <div class="workspace-row"><div class="workspace-name"><b>project-a</b></div><strong>30%</strong><em>Active</em></div>
+              <div class="workspace-row"><div class="workspace-name"><b>project-b</b></div><strong>18%</strong><em>Active</em></div>
             </article>
           </div>
         </div>
