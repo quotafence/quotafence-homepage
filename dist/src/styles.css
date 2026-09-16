@@ -22,7 +22,7 @@ h1,h2,h3,p{margin:0}
 .nav-cta{padding:10px 14px;border:1px solid #3b3b3d;border-radius:8px;color:#fff}
 .menu-button{display:none;background:none;border:0;padding:8px}
 .menu-button span{display:block;width:22px;height:1px;margin:5px 0;background:#fff}
-.hero{position:relative;min-height:920px;padding:165px 0 110px;display:grid;grid-template-columns:.83fr 1.17fr;align-items:center;gap:64px}
+.hero{position:relative;width:min(1320px,calc(100% - 48px));min-height:920px;padding:165px 0 110px;display:grid;grid-template-columns:.72fr 1.28fr;align-items:center;gap:48px}
 .hero:before{content:"";position:absolute;z-index:0;top:0;left:50%;width:100vw;height:760px;pointer-events:none;transform:translateX(-50%);background-image:linear-gradient(rgba(255,255,255,.026) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.026) 1px,transparent 1px),radial-gradient(circle at 72% 30%,rgba(95,215,255,.13),transparent 32%);background-size:64px 64px,64px 64px,auto;mask-image:linear-gradient(to bottom,#000 0%,transparent 88%)}
 .hero-copy{position:relative;z-index:1}
 .eyebrow,.section-label{color:#888f89;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;text-transform:uppercase;letter-spacing:.14em;font-weight:500}
@@ -177,6 +177,7 @@ h1{max-width:760px;font-size:clamp(58px,6vw,86px);line-height:.96;letter-spacing
 .site-footer>a:last-child{color:#aaa}
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:none}
+@media(max-width:1100px){.hero{grid-template-columns:.82fr 1.18fr;gap:36px}.real-app-layout{grid-template-columns:160px minmax(0,1fr)}.real-main{padding-left:18px;padding-right:18px}}
 @media(max-width:900px){.section-shell{width:min(100% - 32px,700px)}
 .site-header{height:66px;padding:0 16px}
 .menu-button{display:block}
