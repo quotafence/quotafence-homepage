@@ -231,3 +231,12 @@ h1{font-size:clamp(40px,13.5vw,52px)}
 .heatmap-cells i{min-width:0;border-radius:1.5px}
 .heatmap-scale{margin-top:5px;display:flex;justify-content:space-between;color:#5f5f64;font-size:5.5px}
 @media(max-width:600px){.heatmap-cells{grid-template-columns:repeat(26,minmax(3px,1fr));grid-auto-columns:auto;gap:1.5px}}
+.real-app-layout{height:540px;grid-template-columns:190px minmax(0,1fr)}
+.real-nav a{font-size:10px}.source-label{font-size:9px}.source-card strong{font-size:9px}.source-card small{font-size:7px}
+.real-topbar{height:36px}.real-topbar h3{font-size:22px}.real-topbar button,.workspace-card header button{font-size:9px}
+.allowance-card{height:265px}.card-kicker{font-size:9px}.allowance-row strong,.allowance-row>b{font-size:10px}.allowance-row span{font-size:8px}.heatmap-title{font-size:9px}.heatmap-title small{font-size:7px}.heatmap-scale{font-size:7px}
+.model-card>div{font-size:8px}.model-card p{font-size:7px}.model-card small{display:none}
+.workspace-card header{padding-top:13px;padding-bottom:13px}.workspace-card h3{font-size:13px}.budget-summary{display:none}
+.allocation-head,.workspace-row{grid-template-columns:14px minmax(90px,1.7fr) 48px 44px 58px 12px;padding-top:8px;padding-bottom:8px;font-size:8px}.workspace-row{min-height:44px}.workspace-name b{font-size:9px}.workspace-row>strong{font-size:8px}.workspace-row em{font-size:7px}
+@media(max-width:1100px){.real-app-layout{grid-template-columns:170px minmax(0,1fr)}}
+@media(max-width:600px){.real-app-layout{height:450px;grid-template-columns:1fr}.allowance-card{height:250px}.allocation-head,.workspace-row{grid-template-columns:12px minmax(76px,1.7fr) 42px 38px 50px;padding-left:10px;padding-right:10px}.allocation-head span:last-child,.grip{display:none}}
