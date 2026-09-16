@@ -7,7 +7,7 @@ const npmRegistryUrl = "https://registry.npmjs.org/@quotafence%2Fcli";
 
 const features = [
   { index: "01", title: "See everything live", body: "Open qfence top for a live terminal dashboard of provider allowances, project budgets, sync health, and six months of local usage history." },
-  { index: "02", title: "Allocate from the CLI", body: "Create, resize, remove, and reprioritize project budgets without leaving the terminal—or use the desktop app for the same local ledger." },
+  { index: "02", title: "Allocate from the CLI", body: "Create, resize, remove, and reprioritize project budgets without leaving the terminal - or use the desktop app for the same local ledger." },
   { index: "03", title: "Guard every launch", body: "Start Codex or Claude through QuotaFence. It checks policy, reserves capacity, supervises the process, and reconciles trustworthy usage when it exits." }
 ];
 
@@ -31,7 +31,7 @@ app.innerHTML = `
       <div class="hero-copy reveal">
         <a class="announcement" href="${repoUrl}" target="_blank" rel="noreferrer"><b>Open source</b><i></i> Codex + Claude today · Copilot next <span>↗</span></a>
         <h1><span>Your agent quota.</span><em>Protected.</em></h1>
-        <p class="hero-lead">QuotaFence allocates, guards, and explains your coding-agent usage—so low-priority work never drains the capacity your important projects need.</p>
+        <p class="hero-lead">QuotaFence allocates, guards, and explains your coding-agent usage, so low-priority work never drains the capacity your important projects need.</p>
         <div class="hero-actions"><a class="button button-primary" href="#install">Install the beta <span>↓</span></a><a class="button button-secondary" href="#workflow">See how it works</a></div>
         <div class="status-row"><span><i class="status-dot"></i> Local-first</span><span>Multi-provider</span><span>Apache 2.0</span></div>
       </div>
@@ -55,22 +55,22 @@ app.innerHTML = `
               <div class="allowance-row"><div><strong>Weekly</strong><span>Resets Sep 15, 04:21</span></div><b>85% left</b><div class="allowance-track"><i style="width:85%"></i></div></div>
               <div class="usage-insights">
                 <div><div class="heatmap-title"><span>⌁ Daily usage</span><small>Last 6 months</small></div><div class="heatmap"><div class="heatmap-cells">${Array.from({ length: 70 }, (_, index) => `<i class="level-${[0,0,1,0,2,0,0,1,0,0,3,0,0,1,0,2,0,0,0,4,0][index % 21]}"></i>`).join("")}</div></div></div>
-                <div class="model-card"><div><span>✦ Model usage</span><small>Observed token share</small></div><p><b>gpt-5</b><span>68%</span></p><i><b style="width:68%"></b></i><p><b>gpt-5-mini</b><span>24%</span></p><i><b style="width:24%"></b></i></div>
+                <div class="model-card"><div><span>✦ Model usage</span><small>Observed token share</small></div><p><b>gpt-5.6-sol</b><span>68%</span></p><i><b style="width:68%"></b></i><p><b>gpt-5.6-terra</b><span>24%</span></p><i><b style="width:24%"></b></i></div>
               </div>
             </article>
             <article class="workspace-card real-panel">
               <header><div><h3>▰ Allocations</h3><p>Weekly quota · priority 1 is protected first</p></div><button>＋ Add allocation</button></header>
               <div class="budget-summary"><span><b>18%</b> used</span><span><b>42%</b> protected</span><span><b>40%</b> free</span></div>
               <div class="allocation-head"><span>Project</span><span>Weekly</span><span>Used</span><span>Left</span><span>Status</span><span></span></div>
-              <div class="workspace-row"><span class="rank">1</span><div class="workspace-name"><b>quotafence</b><small>⌄</small></div><strong>30%</strong><span>12%</span><span>18%</span><em>● Active</em><span class="grip">⋯</span></div>
-              <div class="workspace-row"><span class="rank">2</span><div class="workspace-name"><b>client-platform</b><small>⌄</small></div><strong>18%</strong><span>6%</span><span>12%</span><em>● Active</em><span class="grip">⋯</span></div>
+              <div class="workspace-row"><span class="rank">1</span><div class="workspace-name"><b>project-a</b><small>⌄</small></div><strong>30%</strong><span>12%</span><span>18%</span><em>● Active</em><span class="grip">⋯</span></div>
+              <div class="workspace-row"><span class="rank">2</span><div class="workspace-name"><b>project-b</b><small>⌄</small></div><strong>18%</strong><span>6%</span><span>12%</span><em>● Active</em><span class="grip">⋯</span></div>
             </article>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="problem-band"><div class="section-shell problem-grid reveal"><p class="section-label">The problem</p><h2>Shared limits create<br><em>invisible trade-offs.</em></h2><p>Provider dashboards tell you what remains. They don't tell you which project spent it—or stop background work before it consumes capacity reserved for something critical.</p></div></section>
+    <section class="problem-band"><div class="section-shell problem-grid reveal"><p class="section-label">The problem</p><h2>Shared limits create<br><em>invisible trade-offs.</em></h2><p>Provider dashboards tell you what remains. They don't tell you which project spent it or stop background work before it consumes capacity reserved for something critical.</p></div></section>
 
     <section class="section-shell feature-section" id="product">
       <div class="section-intro reveal"><p class="section-label">The control layer</p><h2>Spend with intention.<br><em>Not anxiety.</em></h2><p>QuotaFence puts allocation, admission, supervision, and reconciliation in one honest workflow.</p></div>
@@ -86,7 +86,7 @@ app.innerHTML = `
           <button type="button" role="tab" aria-selected="false" data-cli-tab="guard"><span>03</span><b>Guard agents</b><small>Codex and Claude</small></button>
         </div>
         <div class="terminal cli-terminal">
-          <div class="terminal-bar"><span></span><span></span><span></span><small>~/Code/quotafence</small></div>
+          <div class="terminal-bar"><span></span><span></span><span></span><small>~/Code/project-a</small></div>
           <div class="cli-panel active" role="tabpanel" data-cli-panel="top"><code><span>❯</span> qfence top --once</code><pre><b> QUOTAFENCE TOP </b>  live local control plane  interactive mode: qfence top
 
 ╭─────────────┬──────────────────────────────┬──────────────────────────────┬──────────────╮
@@ -100,9 +100,9 @@ app.innerHTML = `
 ╭─────┬─────────────┬─────────────────────┬──────────┬──────────┬──────────┬──────────────╮
 │ #   │ PROVIDER    │ PROJECT             │ WEEKLY   │ USED     │ LEFT     │ STATUS       │
 ├─────┼─────────────┼─────────────────────┼──────────┼──────────┼──────────┼──────────────┤
-│ 1   │ Claude Code │ research            │ 15%      │ 2%       │ 13%      │ ● allow      │
-│ 1   │ Codex       │ quotafence          │ 50%      │ 12%      │ 38%      │ ● allow      │
-│ 2   │ Codex       │ client-platform     │ 30%      │ 6%       │ 24%      │ ● allow      │
+│ 1   │ Claude Code │ project-c           │ 15%      │ 2%       │ 13%      │ ● allow      │
+│ 1   │ Codex       │ project-a           │ 50%      │ 12%      │ 38%      │ ● allow      │
+│ 2   │ Codex       │ project-b           │ 30%      │ 6%       │ 24%      │ ● allow      │
 ╰─────┴─────────────┴─────────────────────┴──────────┴──────────┴──────────┴──────────────╯
 
   <i>●  Claude Code · 20% used over 30 days</i>
@@ -115,17 +115,17 @@ app.innerHTML = `
 
   refreshed just now · live interval 30s</pre></div>
           <div class="cli-panel" role="tabpanel" data-cli-panel="allocate"><code><span>❯</span> qfence allocations add --provider codex --percent 20</code><pre><b>PROJECT             WEEKLY   USED   LEFT   STATUS</b>
-quotafence          50%      12%    38%    ● allow
-client-platform     30%       6%    24%    ● allow
-new-project         20%       0%    20%    ● allow
+project-a           50%      12%    38%    ● allow
+project-b           30%       6%    24%    ● allow
+project-c           20%       0%    20%    ● allow
 
 <i># Resize, fund from another project, or change priority</i>
-❯ qfence allocations set new-project --percent 30 --from quotafence
-❯ qfence allocations move new-project up</pre></div>
-          <div class="cli-panel" role="tabpanel" data-cli-panel="guard"><code><span>❯</span> qfence codex --model gpt-5</code><pre>QuotaFence: launching Codex for quotafence with 2 percentage points reserved (Weekly)
+❯ qfence allocations set project-c --percent 30 --from project-a
+❯ qfence allocations move project-c up</pre></div>
+          <div class="cli-panel" role="tabpanel" data-cli-panel="guard"><code><span>❯</span> qfence codex --model gpt-5.6</code><pre>QuotaFence: launching Codex for project-a with 2 percentage points reserved (Weekly)
 
 <i># Claude uses the same admission and reconciliation flow</i>
-❯ qfence claude --model sonnet
+❯ qfence claude --model claude-opus-5
 
 <i># Preview a decision without launching</i>
 ❯ qfence admit codex</pre></div>
