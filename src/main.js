@@ -6,10 +6,16 @@ const npmPackageUrl = "https://www.npmjs.com/package/@quotafence/cli";
 const npmRegistryUrl = "https://registry.npmjs.org/@quotafence%2Fcli";
 
 const features = [
-  { index: "01", title: "See everything live", body: "Open qfence top for a live terminal dashboard of provider allowances, project budgets, sync health, and six months of local usage history." },
-  { index: "02", title: "Allocate from the CLI", body: "Create, resize, remove, and reprioritize project budgets without leaving the terminal - or use the desktop app for the same local ledger." },
-  { index: "03", title: "Guard every launch", body: "Start Codex or Claude through QuotaFence. It checks policy, reserves capacity, supervises the process, and reconciles trustworthy usage when it exits." }
+  { index: "01", visual: "quota", title: "See everything live", body: "Open qfence top for a live terminal dashboard of provider allowances, project budgets, sync health, and six months of local usage history." },
+  { index: "02", visual: "allocate", title: "Allocate from the CLI", body: "Create, resize, remove, and reprioritize project budgets without leaving the terminal - or use the desktop app for the same local ledger." },
+  { index: "03", visual: "guard", title: "Guard every launch", body: "Start Codex or Claude through QuotaFence. It checks policy, reserves capacity, supervises the process, and reconciles trustworthy usage when it exits." }
 ];
+
+const featureVisuals = {
+  quota: `<div class="feature-demo quota-demo"><div><span>5-hour</span><i><b style="width:93%"></b></i><strong>93%</strong></div><div><span>Weekly</span><i><b style="width:85%"></b></i><strong>85%</strong></div></div>`,
+  allocate: `<div class="feature-demo allocation-demo"><div><span>project-a</span><i><b style="width:40%"></b></i><strong>40%</strong></div><div><span>project-b</span><i><b style="width:30%"></b></i><strong>30%</strong></div></div>`,
+  guard: `<div class="feature-demo guard-demo"><code>qfence codex</code><div><i></i><span>Allowed</span><strong>2% reserved</strong></div></div>`
+};
 
 const workflow = [
   ["Map", "Bind a local folder to a workspace allocation."],
@@ -71,7 +77,7 @@ app.innerHTML = `
 
     <section class="section-shell feature-section" id="product">
       <div class="section-intro reveal"><p class="section-label">The control layer</p><h2>Spend with intention.<br><em>Not anxiety.</em></h2><p>QuotaFence puts allocation, admission, supervision, and reconciliation in one honest workflow.</p></div>
-      <div class="feature-grid">${features.map((feature) => `<article class="feature-card reveal"><span>${feature.index}</span><div class="feature-icon" aria-hidden="true"><i></i><i></i><i></i></div><h3>${feature.title}</h3><p>${feature.body}</p></article>`).join("")}</div>
+      <div class="feature-grid">${features.map((feature) => `<article class="feature-card reveal"><span>${feature.index}</span>${featureVisuals[feature.visual]}<h3>${feature.title}</h3><p>${feature.body}</p></article>`).join("")}</div>
     </section>
 
     <section class="workflow-section" id="workflow"><div class="section-shell">
