@@ -54,7 +54,7 @@ app.innerHTML = `
               <div class="allowance-row"><div><strong>5-hour</strong><span>Resets today, 16:22</span></div><b>93% left</b><div class="allowance-track"><i style="width:93%"></i></div></div>
               <div class="allowance-row"><div><strong>Weekly</strong><span>Resets Sep 15, 04:21</span></div><b>85% left</b><div class="allowance-track"><i style="width:85%"></i></div></div>
               <div class="usage-insights">
-                <div><div class="heatmap-title"><span>⌁ Daily usage</span><small>Last 6 months</small></div><div class="heatmap"><div class="heatmap-cells">${Array.from({ length: 70 }, (_, index) => `<i class="level-${[0,0,1,0,2,0,0,1,0,0,3,0,0,1,0,2,0,0,0,4,0][index % 21]}"></i>`).join("")}</div></div></div>
+                <div><div class="heatmap-title"><span>⌁ Daily usage</span><small>Last 6 months</small></div><div class="heatmap"><div class="heatmap-cells">${Array.from({ length: 182 }, (_, index) => `<i class="level-${[0,0,1,0,2,0,0,1,0,0,3,0,0,1,0,2,0,0,0,4,0,1,0,2,0,0,3,1,0,0,2,0,1,0,0][index % 35]}"></i>`).join("")}</div><div class="heatmap-scale"><span>6 months ago</span><span>Today</span></div></div></div>
                 <div class="model-card"><div><span>✦ Model usage</span><small>Observed token share</small></div><p><b>gpt-5.6-sol</b><span>68%</span></p><i><b style="width:68%"></b></i><p><b>gpt-5.6-terra</b><span>24%</span></p><i><b style="width:24%"></b></i></div>
               </div>
             </article>
