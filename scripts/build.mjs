@@ -5,6 +5,7 @@ await mkdir("dist/src", { recursive: true });
 await mkdir("dist/assets", { recursive: true });
 await Promise.all([
   cp("index.html", "dist/index.html"),
+  cp("robots.txt", "dist/robots.txt"),
   cp("src/main.js", "dist/src/main.js"),
   cp("src/styles.css", "dist/src/styles.css"),
   cp("assets/codex-dark.png", "dist/assets/codex-dark.png"),

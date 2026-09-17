@@ -5,22 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="QuotaFence is a local-first quota control layer for coding agents. Monitor providers, allocate capacity by project, and protect important work from the desktop or CLI."
+      content="Track Codex and Claude Code quota, assign weekly budgets to project folders, and protect important work with a local-first desktop app and CLI."
     />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="application-name" content="QuotaFence" />
     <meta name="theme-color" content="#070908" />
-    <meta property="og:title" content="QuotaFence - Protect your agent quota" />
+    <meta property="og:title" content="QuotaFence - Codex & Claude Code Quota Manager" />
     <meta
       property="og:description"
-      content="Put a fence around your best work. Local-first quota control for coding agents."
+      content="Track shared AI coding-agent allowances, allocate weekly quota by project, and enforce local budgets from the desktop or terminal."
     />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="QuotaFence" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="QuotaFence - Codex & Claude Code Quota Manager" />
+    <meta
+      name="twitter:description"
+      content="Local-first quota tracking, project budgets, and protection for Codex and Claude Code."
+    />
     <link rel="icon" type="image/png" href="./assets/brand/quotafence-black.png" media="(prefers-color-scheme: light)" />
     <link rel="icon" type="image/png" href="./assets/brand/quotafence-white.png" media="(prefers-color-scheme: dark)" />
     <link rel="stylesheet" href="./src/styles.css" />
-    <title>QuotaFence - Protect your agent quota</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "QuotaFence",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "macOS, Windows, Linux",
+        "softwareVersion": "0.1.0",
+        "description": "Local-first quota tracking, weekly project budgets, and protection for Codex and Claude Code.",
+        "downloadUrl": "https://github.com/quotafence/quotafence/releases",
+        "codeRepository": "https://github.com/quotafence/quotafence",
+        "license": "https://www.apache.org/licenses/LICENSE-2.0",
+        "sameAs": [
+          "https://github.com/quotafence/quotafence",
+          "https://www.npmjs.com/package/@quotafence/cli"
+        ],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+    <title>QuotaFence - Codex &amp; Claude Code Quota Manager</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <main class="seo-fallback">
+        <p>Open-source · Local-first · macOS, Windows, and Linux</p>
+        <h1>Protect Codex and Claude Code quota by project</h1>
+        <p>
+          QuotaFence tracks 5-hour and weekly allowances, assigns weekly budgets
+          to local project folders, and applies local Warn and Stop policies.
+        </p>
+        <p><code>npm install --global @quotafence/cli</code></p>
+        <nav aria-label="QuotaFence links">
+          <a href="https://github.com/quotafence/quotafence/releases">Download QuotaFence</a>
+          <a href="https://www.npmjs.com/package/@quotafence/cli">Install the CLI</a>
+          <a href="https://github.com/quotafence/quotafence">View source and documentation</a>
+        </nav>
+        <section>
+          <h2>AI coding-agent quota management that stays local</h2>
+          <p>
+            Use one desktop and terminal dashboard for Codex and Claude Code,
+            manage weekly project allocations, review basic usage history, and
+            protect new managed sessions or prompts observed by verified hooks.
+          </p>
+        </section>
+      </main>
+    </div>
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>
