@@ -1,5 +1,5 @@
 const repoUrl = "https://github.com/quotafence/quotafence";
-const docsUrl = `${repoUrl}/tree/main/docs`;
+const docsUrl = "/docs/";
 const releasesUrl = `${repoUrl}/releases`;
 const releasesApiUrl = "https://api.github.com/repos/quotafence/quotafence/releases?per_page=10";
 const npmPackageUrl = "https://www.npmjs.com/package/@quotafence/cli";
@@ -44,7 +44,7 @@ app.innerHTML = `
   <header class="site-header" data-header>
     <a class="brand" href="#top" aria-label="QuotaFence home"><img class="brand-lockup" src="./assets/brand/quotafence-white-text.png" alt="QuotaFence" data-brand-img /></a>
     <button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false" data-menu-button><span></span><span></span></button>
-    <nav class="nav" data-nav><a href="#product">Product</a><a href="#workflow">Workflow</a><a href="#install">Install</a><a href="#faq">FAQ</a><a href="${docsUrl}" target="_blank" rel="noreferrer">Docs</a><a class="nav-cta" href="${repoUrl}" target="_blank" rel="noreferrer">View on GitHub<span class="star-count" data-star-count hidden></span> <span>↗</span></a><button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch colour theme">${icon("sun", 16)}${icon("moon", 16)}</button></nav>
+    <nav class="nav" data-nav><a href="#product">Product</a><a href="#workflow">Workflow</a><a href="#install">Install</a><a href="#faq">FAQ</a><a href="${docsUrl}">Docs</a><a class="nav-cta" href="${repoUrl}" target="_blank" rel="noreferrer">View on GitHub<span class="star-count" data-star-count hidden></span> <span>↗</span></a><button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch colour theme">${icon("sun", 16)}${icon("moon", 16)}</button></nav>
   </header>
 
   <main id="top">
@@ -217,7 +217,7 @@ project-c           20%       0%    20%    ● allow
           <h3>CLI via npm</h3>
           <p>One command for supported macOS, Windows x64, and GNU/Linux x64 machines.</p>
           <code>npm install -g @quotafence/cli</code>
-          <a class="install-link" data-npm-link href="${repoUrl}/blob/main/docs/installing.md" target="_blank" rel="noreferrer">Installation guide <span>↗</span></a>
+          <a class="install-link" data-npm-link href="${docsUrl}#install">Installation guide <span>→</span></a>
         </article>
         <article class="install-card reveal" data-install-card="macos">
           <div class="install-card-head"><span class="platform-mark">⌘</span><span class="availability" data-platform-status="macos">Checking release</span></div>
@@ -238,7 +238,7 @@ project-c           20%       0%    20%    ● allow
           <div class="linux-actions"><a class="install-link" data-download="linux-appimage" href="${releasesUrl}" target="_blank" rel="noreferrer">View releases <span>↗</span></a><a class="install-link secondary-install-link" data-download="linux-deb" href="${releasesUrl}" target="_blank" rel="noreferrer" hidden>Download .deb <span>↓</span></a></div>
         </article>
       </div>
-      <p class="install-note reveal">Desktop downloads come from GitHub Releases. CI artifacts are temporary build outputs and are not used by these buttons. <a href="${repoUrl}/blob/main/docs/installing.md" target="_blank" rel="noreferrer">Verify checksums before installing ↗</a></p>
+      <p class="install-note reveal">Desktop downloads come from GitHub Releases. CI artifacts are temporary build outputs and are not used by these buttons. <a href="${docsUrl}#install">Read the installation guide →</a></p>
     </section>
 
     <section class="faq-section section-shell" id="faq">
@@ -254,7 +254,7 @@ project-c           20%       0%    20%    ● allow
 
     <section class="section-shell principles-section" id="principles"><div class="principles-card reveal"><div><p class="section-label">Built on trust</p><h2>We would rather say <em>&ldquo;we don't know&rdquo;</em> than guess.</h2></div><div class="principle-list"><div><span>01</span><p><strong>Your policy stays on your device.</strong> Workspace metadata, allocations, and the managed-session ledger use local storage. No hosted account is required.</p></div><div><span>02</span><p><strong>Capability claims match reality.</strong> QuotaFence distinguishes process control, trusted prompt admission, and observation-only tracking instead of treating them as equivalent.</p></div><div><span>03</span><p><strong>Uncertainty remains visible.</strong> Concurrent or unmapped activity stays unattributed instead of being assigned to the wrong project.</p></div></div></div></section>
 
-    <section class="cta-section section-shell reveal"><div><p class="section-label">Open source · Apache 2.0</p><h2>Give important projects<br>room to finish.</h2></div><div><p>Track Codex and Claude Code in one local dashboard, then turn shared weekly allowance into explicit project budgets and priorities.</p><div class="cta-actions"><a class="button button-primary light" href="#install">Install QuotaFence <span>↓</span></a><a class="button docs-button" href="${docsUrl}" target="_blank" rel="noreferrer">Read the docs <span>↗</span></a></div></div></section>
+    <section class="cta-section section-shell reveal"><div><p class="section-label">Open source · Apache 2.0</p><h2>Give important projects<br>room to finish.</h2></div><div><p>Track Codex and Claude Code in one local dashboard, then turn shared weekly allowance into explicit project budgets and priorities.</p><div class="cta-actions"><a class="button button-primary light" href="#install">Install QuotaFence <span>↓</span></a><a class="button docs-button" href="${docsUrl}">Read the docs <span>→</span></a></div></div></section>
   </main>
 
   <footer class="site-footer section-shell"><a class="brand" href="#top" aria-label="QuotaFence home"><img class="brand-lockup" src="./assets/brand/quotafence-white-text.png" alt="QuotaFence" data-brand-img /></a><p>Local-first quota management for Codex and Claude Code.</p><a href="${repoUrl}" target="_blank" rel="noreferrer">GitHub ↗</a></footer>

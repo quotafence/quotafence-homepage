@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Learn how to install QuotaFence, sync Codex and Claude Code quota, allocate weekly budgets by project, and use desktop protection or the qfence CLI." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#070908" />
+    <link rel="canonical" href="https://quotafence.com/docs/" />
+    <meta property="og:title" content="QuotaFence Docs — Install, Allocate, and Protect" />
+    <meta property="og:description" content="A practical guide to tracking AI coding-agent quota and protecting weekly budgets for local projects." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://quotafence.com/docs/" />
+    <meta property="og:site_name" content="QuotaFence" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="QuotaFence Docs" />
+    <meta name="twitter:description" content="Install QuotaFence, allocate weekly quota by project, and protect Codex and Claude Code work." />
+    <link rel="icon" type="image/png" href="../assets/brand/quotafence-black.png" media="(prefers-color-scheme: light)" />
+    <link rel="icon" type="image/png" href="../assets/brand/quotafence-white.png" media="(prefers-color-scheme: dark)" />
+    <link rel="stylesheet" href="../src/docs.css" />
+    <title>QuotaFence Docs — User Guide</title>
+  </head>
+  <body>
+    <header class="docs-header">
+      <a class="docs-brand" href="/" aria-label="QuotaFence home"><img src="../assets/brand/quotafence-white-text.png" alt="QuotaFence" data-brand-img /></a>
+      <span class="docs-label">Docs</span>
+      <button class="docs-menu" type="button" aria-expanded="false" aria-controls="docs-sidebar" data-docs-menu>Menu</button>
+      <nav aria-label="Primary"><a href="/">Product</a><a href="https://github.com/quotafence/quotafence/releases">Download</a><a href="https://github.com/quotafence/quotafence">GitHub ↗</a><button class="theme-toggle" type="button" aria-label="Switch colour theme" data-theme-toggle>◐</button></nav>
+    </header>
+
+    <div class="docs-layout">
+      <aside class="docs-sidebar" id="docs-sidebar" data-docs-sidebar>
+        <nav aria-label="Documentation">
+          <p>Get started</p>
+          <a class="active" href="#quick-start">Quick start</a>
+          <a href="#install">Install</a>
+          <a href="#first-sync">First sync</a>
+          <p>Core workflow</p>
+          <a href="#allocations">Allocate weekly quota</a>
+          <a href="#priority">Priority and Safe quota</a>
+          <a href="#protection">Protect agent work</a>
+          <p>Use QuotaFence</p>
+          <a href="#desktop">Desktop app</a>
+          <a href="#terminal">CLI and terminal UI</a>
+          <a href="#history">Usage history</a>
+          <p>Help</p>
+          <a href="#troubleshooting">Troubleshooting</a>
+          <a href="#privacy">Privacy and data</a>
+        </nav>
+      </aside>
+
+      <main class="docs-main">
+        <section class="docs-hero" id="quick-start">
+          <p class="eyebrow">QuotaFence user guide</p>
+          <h1>Protect shared AI quota<br />in a few minutes.</h1>
+          <p class="lead">Install QuotaFence, sync a provider, give each project a weekly budget, then turn on protection. Your allocations and usage ledger stay on this device.</p>
+          <div class="quick-path" aria-label="Quick start steps">
+            <div><span>1</span><strong>Install</strong><small>Desktop or CLI</small></div>
+            <div><span>2</span><strong>Sync</strong><small>Codex or Claude Code</small></div>
+            <div><span>3</span><strong>Allocate</strong><small>Choose folder and weekly %</small></div>
+            <div><span>4</span><strong>Protect</strong><small>Enable the provider integration</small></div>
+          </div>
+          <div class="callout"><strong>New to QuotaFence?</strong><span>Start with the desktop app. Use the CLI when you want the same controls directly in your terminal.</span></div>
+        </section>
+
+        <section class="doc-section" id="install">
+          <p class="section-number">01</p><h2>Install QuotaFence</h2>
+          <p>Choose the desktop app, the CLI, or both. They use the same local database, so allocations created in one appear in the other.</p>
+          <div class="choice-grid">
+            <article><span class="choice-icon">▣</span><h3>Desktop app</h3><p>Best for visual setup, provider health, allocations, and protection settings.</p><a href="https://github.com/quotafence/quotafence/releases">Download from GitHub Releases ↗</a></article>
+            <article><span class="choice-icon">›_</span><h3>CLI and TUI</h3><p>Best for terminal-first workflows, scripts, and managed agent launches.</p><div class="code-block"><code>npm install --global @quotafence/cli</code><button type="button" data-copy="npm install --global @quotafence/cli">Copy</button></div></article>
+          </div>
+          <div class="note warning"><strong>Early release</strong><p>Desktop builds may be unsigned. Download only from the official release page, verify the supplied checksum, then follow your operating system’s “Open anyway” flow. Do not disable system-wide security.</p></div>
+        </section>
+
+        <section class="doc-section" id="first-sync">
+          <p class="section-number">02</p><h2>Sync your first provider</h2>
+          <p>QuotaFence reads the allowance information already available to Codex or Claude Code on your device. It does not ask you to paste provider credentials into the app.</p>
+          <ol class="steps">
+            <li><span>1</span><div><strong>Sign in to the provider normally</strong><p>Make sure Codex or Claude Code already works on this computer.</p></div></li>
+            <li><span>2</span><div><strong>Open QuotaFence and select the provider</strong><p>Choose <b>Sync</b>. The 5-hour and weekly windows should show their remaining percentage and reset time.</p></div></li>
+            <li><span>3</span><div><strong>Confirm the values</strong><p>If a provider temporarily rate-limits refreshes, QuotaFence keeps the last successful checkpoint and shows its real age.</p></div></li>
+          </ol>
+          <p class="or"><span>or from the terminal</span></p>
+          <div class="code-stack"><div class="code-block"><code>qfence sync</code><button type="button" data-copy="qfence sync">Copy</button></div><div class="code-block"><code>qfence status</code><button type="button" data-copy="qfence status">Copy</button></div></div>
+        </section>
+
+        <section class="doc-section" id="allocations">
+          <p class="section-number">03</p><h2>Allocate weekly quota by project</h2>
+          <p>An allocation gives a local folder a percentage of the provider’s <strong>full weekly allowance</strong>. Five-hour limits remain provider-wide and are not divided between projects.</p>
+          <ol class="steps">
+            <li><span>1</span><div><strong>Open a provider and choose Add allocation</strong><p>Select the actual project folder so QuotaFence can match work to it.</p></div></li>
+            <li><span>2</span><div><strong>Choose a weekly percentage</strong><p>For example, 30% reserves a project budget equal to 30 percentage points of the provider’s weekly window.</p></div></li>
+            <li><span>3</span><div><strong>Choose where quota comes from</strong><p>QuotaFence uses unallocated quota first. If there is not enough, select another project to reduce.</p></div></li>
+          </ol>
+          <div class="code-block"><code>qfence allocations add --provider codex --percent 30</code><button type="button" data-copy="qfence allocations add --provider codex --percent 30">Copy</button></div>
+          <p class="fine-print">Run the command inside the project folder, or add <code>--path /path/to/project</code>. Use <code>--provider claude</code> for Claude Code.</p>
+        </section>
+
+        <section class="doc-section" id="priority">
+          <p class="section-number">04</p><h2>Understand priority and Safe quota</h2>
+          <p>Budget left and Safe quota answer different questions. This distinction prevents a low-priority project from spending quota promised to projects above it.</p>
+          <div class="definition-grid">
+            <article><h3>Budget left</h3><strong>Allocation − attributed usage</strong><p>How much of this project’s own weekly budget has not been used.</p></article>
+            <article><h3>Safe quota</h3><strong>Provider remaining − higher priorities</strong><p>How much can be spent now without consuming quota protected for projects above it.</p></article>
+          </div>
+          <div class="note"><strong>Priority 1 is protected first.</strong><p>Drag projects in the desktop app or use <code>Shift+K</code> and <code>Shift+J</code> in <code>qfence top</code>. A project can have budget left but Safe quota equal to zero when higher-priority reservations consume the provider’s remaining capacity.</p></div>
+        </section>
+
+        <section class="doc-section" id="protection">
+          <p class="section-number">05</p><h2>Protect Codex and Claude Code work</h2>
+          <p>Protection checks the current project, provider, allocation, priority, and policy before supported work begins. A warning tells you capacity is running low; Stop blocks work that would consume protected quota.</p>
+          <div class="protection-grid">
+            <article><h3>Desktop integrations</h3><p>Open <b>Settings</b>, choose <b>Codex</b> or <b>Claude Code</b>, and enable protection. Start a <strong>new task or conversation after enabling hooks</strong>; an already-open task cannot attach newly installed hooks. Send the first prompt, then use <b>Check now</b> in QuotaFence.</p></article>
+            <article><h3>Managed terminal launch</h3><p>Start the agent through QuotaFence so admission and reconciliation use the current folder’s allocation.</p><div class="code-stack"><div class="code-block"><code>qfence codex</code><button type="button" data-copy="qfence codex">Copy</button></div><div class="code-block"><code>qfence claude</code><button type="button" data-copy="qfence claude">Copy</button></div></div></article>
+          </div>
+          <div class="note warning"><strong>If a prompt is blocked unexpectedly</strong><p>Check that the task belongs to the allocated folder, sync the provider, and inspect Safe quota—not only Budget left. Temporary provider refresh failures should not be treated as fresh data.</p></div>
+        </section>
+
+        <section class="doc-section" id="desktop">
+          <p class="section-number">06</p><h2>Use the desktop app</h2>
+          <div class="command-list">
+            <div><strong>Overview</strong><p>See all providers, allowance windows, sync age, and recent local activity.</p></div>
+            <div><strong>Provider page</strong><p>Sync 5-hour and weekly windows, review reset times, and manage that provider’s project allocations.</p></div>
+            <div><strong>Allocations</strong><p>Add folders, change weekly budgets, transfer quota, reorder priorities, and inspect full paths.</p></div>
+            <div><strong>Settings</strong><p>Configure general behavior and open provider-specific integration health and protection controls.</p></div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="terminal">
+          <p class="section-number">07</p><h2>Use the CLI and terminal UI</h2>
+          <p>Run <code>qfence top</code> for the interactive dashboard. It shows allowances, projects, and history using the same data as the desktop app.</p>
+          <div class="key-grid">
+            <div><kbd>←</kbd><kbd>→</kbd><span>Switch tabs</span></div><div><kbd>j</kbd><kbd>k</kbd><span>Select a project</span></div><div><kbd>a</kbd><span>Add allocation</span></div><div><kbd>e</kbd><span>Edit allocation</span></div><div><kbd>d</kbd><span>Delete allocation</span></div><div><kbd>K</kbd><kbd>J</kbd><span>Change priority</span></div><div><kbd>r</kbd><span>Refresh now</span></div><div><kbd>q</kbd><span>Quit</span></div>
+          </div>
+          <h3 class="subheading">Useful commands</h3>
+          <div class="command-table" role="table" aria-label="Useful qfence commands">
+            <div role="row"><code>qfence status</code><span>Refresh and show allowance status</span></div>
+            <div role="row"><code>qfence allocations</code><span>List project budgets and decisions</span></div>
+            <div role="row"><code>qfence history</code><span>Show basic daily usage history</span></div>
+            <div role="row"><code>qfence here</code><span>Show the project mapped to this folder</span></div>
+            <div role="row"><code>qfence policy</code><span>Show the effective Warn and Stop policy</span></div>
+            <div role="row"><code>qfence --help</code><span>See the complete command reference</span></div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="history">
+          <p class="section-number">08</p><h2>Review basic usage history</h2>
+          <p>The desktop activity map and <code>qfence history</code> use a rolling local history. Provider movement that cannot be safely mapped to one project remains unattributed instead of being guessed.</p>
+          <div class="code-stack"><div class="code-block"><code>qfence history</code><button type="button" data-copy="qfence history">Copy</button></div><div class="code-block"><code>qfence history codex --days 90</code><button type="button" data-copy="qfence history codex --days 90">Copy</button></div></div>
+        </section>
+
+        <section class="doc-section" id="troubleshooting">
+          <p class="section-number">09</p><h2>Troubleshooting</h2>
+          <div class="faq-docs">
+            <details><summary><code>qfence</code> is not found</summary><p>Open a new terminal after npm installation. Confirm npm’s global binary directory is in your <code>PATH</code>, then run <code>npm install --global @quotafence/cli</code> again.</p></details>
+            <details><summary>A provider shows stale data or a refresh warning</summary><p>Wait briefly before syncing again. Providers can rate-limit repeated refreshes. QuotaFence displays the age of the last successful checkpoint rather than claiming stale data is current.</p></details>
+            <details><summary>Protection says a new task is required</summary><p>Create a new provider task after hooks are enabled, send its first prompt, then select <b>Check now</b>. Existing tasks cannot load hooks installed after they were opened.</p></details>
+            <details><summary>A project has budget left but is stopped</summary><p>Look at Safe quota and project priority. Higher-priority projects may reserve all currently remaining provider quota. Reorder priorities, change allocations, or wait for the weekly reset.</p></details>
+            <details><summary>The wrong folder is detected</summary><p>Run <code>qfence here</code> inside the folder. QuotaFence uses the most specific allocated ancestor. Remove or correct an unintended parent-folder allocation if necessary.</p></details>
+          </div>
+          <p class="help-link">Still stuck? <a href="https://github.com/quotafence/quotafence/issues">Open a GitHub issue ↗</a> without attaching prompts, source code, credentials, or the local database.</p>
+        </section>
+
+        <section class="doc-section" id="privacy">
+          <p class="section-number">10</p><h2>Privacy and local data</h2>
+          <p>QuotaFence is local-first. The open-source core does not intentionally upload prompts, responses, source files, transcripts, provider credentials, or its SQLite ledger. Folder paths, allocations, policies, checkpoints, and basic history remain on your device.</p>
+          <div class="note"><strong>What QuotaFence can see</strong><p>It stores the minimum metadata needed to match a local folder to an allocation and reconcile provider-level quota movement. Provider APIs expose aggregate allowance data, so exact token usage by project is not always available.</p></div>
+        </section>
+
+        <section class="docs-end">
+          <p>Ready to begin?</p><h2>Install, sync, then protect your first project.</h2><div><a class="primary-link" href="https://github.com/quotafence/quotafence/releases">Download QuotaFence</a><a href="https://github.com/quotafence/quotafence/blob/main/docs/cli.md">Full CLI reference ↗</a></div>
+        </section>
+      </main>
+
+      <aside class="docs-toc" aria-label="On this page"><p>On this page</p><a href="#install">Install</a><a href="#first-sync">First sync</a><a href="#allocations">Allocations</a><a href="#priority">Priority and Safe quota</a><a href="#protection">Protection</a><a href="#terminal">CLI and TUI</a><a href="#troubleshooting">Troubleshooting</a></aside>
+    </div>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script type="module" src="../src/docs.js"></script>
+  </body>
+</html>
